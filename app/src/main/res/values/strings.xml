@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DemoGitHub</string>
+    <string name="reposearch.state.emptyrepos">No se encontraron repositorios con el criterio de busqueda</string>
+</resources>
