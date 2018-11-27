@@ -2,6 +2,15 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = '0.8.1' //Use latest version
+}
+
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+}
 
 android {
 
@@ -19,6 +28,7 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
+            testCoverageEnabled = true
         }
         release {
             minifyEnabled false
@@ -26,6 +36,22 @@ android {
         }
 
     }
+    testOptions {
+        execution 'ANDROID_TEST_ORCHESTRATOR'
+        animationsDisabled true
+        unitTests.returnDefaultValues = true
+
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/java'
+        test.java.srcDirs += 'src/test/java'
+    }
+
+}
+
+sourceSets {
+    main.java.srcDirs += 'src/main/java'
+    test.java.srcDirs += 'src/test/java'
 }
 
 dependencies {
@@ -69,11 +95,14 @@ dependencies {
     androidTestImplementation deps.android.test.testRunner
     androidTestImplementation deps.android.test.testRules
     androidTestImplementation deps.android.test.espressoCore
+    androidTestImplementation deps.arch.core
 
     // Development dependencies
     debugImplementation deps.leakcanary.op
     releaseImplementation deps.leakcanary.noop
     testImplementation deps.leakcanary.noop
+
+    testCompile deps.test.inline
 
     debugImplementation deps.chuck.op
     releaseImplementation deps.chuck.noop

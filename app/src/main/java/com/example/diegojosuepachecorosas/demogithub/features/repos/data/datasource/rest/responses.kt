@@ -15,8 +15,8 @@ data class RepoResponseData(
         @SerializedName("name")
         val name: String,
         @SerializedName("full_name")
-        val fullName: String,
-        @SerializedName("private")
+        val fullName: String
+    /*    @SerializedName("private")
         val _private: Boolean,
         @SerializedName("description")
         val description: String,
@@ -33,5 +33,5 @@ data class RepoResponseData(
         @SerializedName("archived")
         val archived: Boolean,
         @SerializedName("score")
-        val score: Double
+        val score: Double*/
 )

@@ -23,8 +23,8 @@ object RepoVMMapper : Mapper<RepoEntity, ReposVM> {
         return ReposVM(
                 origin.id,
                 origin.name,
-                origin.fullName,
-                origin._private,
+                origin.fullName
+/*                origin._private,
                 origin.description,
                 origin.updateAt,
                 origin.size,
@@ -32,7 +32,7 @@ object RepoVMMapper : Mapper<RepoEntity, ReposVM> {
                 origin.language,
                 origin.hasWiki,
                 origin.archived,
-                origin.score
+                origin.score*/
         )
     }
 

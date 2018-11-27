@@ -1,7 +1,6 @@
 package com.example.diegojosuepachecorosas.demogithub.features.repos.domain.interactor
 
 import com.example.diegojosuepachecorosas.demogithub.core.interactor.Interactor
-import com.example.diegojosuepachecorosas.demogithub.features.repos.domain.entity.RepoEntity
 import com.example.diegojosuepachecorosas.demogithub.features.repos.domain.entity.ResultEntity
 import com.example.diegojosuepachecorosas.demogithub.features.repos.domain.repository.RepoRepository
 import io.reactivex.Observable

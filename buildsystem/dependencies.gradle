@@ -43,6 +43,9 @@ ext {
             'runner'             : '1.0.2',
             'espresso'           : '3.0.2',
             'leakCanary'         : '1.5.4',
+            'inline'             : '2.13.0',
+            'archtesting'        : '1.0.0'
+
     ]
     deps = [
             'kotlin'    : [
@@ -103,7 +106,11 @@ ext {
                     'junit'  : "junit:junit:${versions.junit}",
                     'mockito': "org.mockito:mockito-core:${versions.mockito}",
                     'truth'  : "com.google.truth:truth:${versions.truth}",
-                    'kfluent': "org.amshove.kluent:kluent-android:${versions.kfluent}"
+                    'kfluent': "org.amshove.kluent:kluent-android:${versions.kfluent}",
+                    'inline' : "org.mockito:mockito-inline:${versions.inline}"
+            ],
+            'arch'      :[
+                    'core'  : "android.arch.core:core-testing:${versions.archtesting}"
             ]
     ]
 
