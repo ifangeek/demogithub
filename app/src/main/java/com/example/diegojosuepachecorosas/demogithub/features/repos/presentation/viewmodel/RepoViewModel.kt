@@ -3,6 +3,7 @@ package com.example.diegojosuepachecorosas.demogithub.features.repos.presentatio
 import android.annotation.SuppressLint
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import android.os.Debug
 import android.util.Log
 import com.example.diegojosuepachecorosas.demogithub.core.scheduler.SchedulerProvider
 import com.example.diegojosuepachecorosas.demogithub.features.repos.domain.interactor.GetAllReposInteractor
@@ -35,9 +36,18 @@ class RepoViewModel
                         state.value = ReposViewState.Success(it.totalCount,it.result)
                     }
                 }, {
+<<<<<<< HEAD
                     state.value = ReposViewState.Error("Error al conectar ")
                     Log.e(RepoViewModel::class.java.name,it.stackTrace.toString())
+=======
+                    state.value = ReposViewState.Error("Error al conectar al Servidor")
+                    Log.e(RepoViewModel::class.java.name, it.printStackTrace().toString())
+>>>>>>> 02ef840fac80d3f96d19ea03c8f6ccc28aed5fb6
 
+
+                    // tracker algun comportamiento de la app o funcionalidad.
+    /*                Debug.stopMethodTracing()
+                    Debug.startMethodTracing()*/
                 }))
     }
 
@@ -45,4 +55,5 @@ class RepoViewModel
         super.onCleared()
         disposable.clear()
     }
+
 }

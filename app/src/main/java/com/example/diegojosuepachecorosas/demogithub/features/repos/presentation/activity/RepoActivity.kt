@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -12,8 +13,8 @@ import android.widget.TextView
 import com.example.diegojosuepachecorosas.demogithub.R
 import com.example.diegojosuepachecorosas.demogithub.core.platform.BaseActivity
 import com.example.diegojosuepachecorosas.demogithub.features.repos.presentation.adapter.RVReposAdapter
-import com.example.diegojosuepachecorosas.demogithub.features.repos.presentation.viewmodel.ReposViewState
 import com.example.diegojosuepachecorosas.demogithub.features.repos.presentation.viewmodel.RepoViewModel
+import com.example.diegojosuepachecorosas.demogithub.features.repos.presentation.viewmodel.ReposViewState
 import kotlinx.android.synthetic.main.activity_main.*
 
 class RepoActivity : BaseActivity() {
@@ -36,6 +37,8 @@ class RepoActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
         adapter = RVReposAdapter()
         rvSearch.adapter = adapter
+        var layout = LinearLayoutManager(this)
+        rvSearch.layoutManager = layout
 
         etSearchQuery.setOnEditorActionListener(object : TextView.OnEditorActionListener {
             override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
@@ -47,6 +50,7 @@ class RepoActivity : BaseActivity() {
                 return false
             }
         })
+
 
 
         viewModel.state.observe(this, Observer {
@@ -67,8 +71,13 @@ class RepoActivity : BaseActivity() {
                     is ReposViewState.Success -> {
                         progressBar.visibility = View.GONE
                         tvMessage.visibility = View.GONE
+<<<<<<< HEAD
                         tvCountRepos.text ="Número de resultado = "+ totalcount.toString()
                         adapter.data = repos
+=======
+                        tvCountRepos.text = String.format("Número de resultados : %d", totalcount)
+                        adapter.addRepos(repos)
+>>>>>>> 02ef840fac80d3f96d19ea03c8f6ccc28aed5fb6
 
 
                     }

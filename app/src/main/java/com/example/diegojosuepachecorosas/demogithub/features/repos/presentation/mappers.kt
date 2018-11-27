@@ -23,13 +23,24 @@ object RepoVMMapper : Mapper<RepoEntity, ReposVM> {
         return ReposVM(
                 origin.id,
                 origin.name,
+<<<<<<< HEAD
                 origin.fullName,
                 origin.private,
                 origin.html_url,
+=======
+                origin.fullName
+/*                origin._private,
+>>>>>>> 02ef840fac80d3f96d19ea03c8f6ccc28aed5fb6
                 origin.description,
                 origin.size,
                 origin.language,
+<<<<<<< HEAD
                 origin.score
+=======
+                origin.hasWiki,
+                origin.archived,
+                origin.score*/
+>>>>>>> 02ef840fac80d3f96d19ea03c8f6ccc28aed5fb6
         )
     }
 

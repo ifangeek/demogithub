@@ -8,7 +8,7 @@ object ResultDataMapper : Mapper<ResultResponseData, ResultEntity> {
     override fun map(origin: ResultResponseData): ResultEntity {
         return ResultEntity(
                 origin.totalCount,
-                origin.result?.map(RepoDataMapper::map) as ArrayList<RepoEntity>
+                origin.result!!.map(RepoDataMapper::map) as ArrayList<RepoEntity>
         )
     }
 
@@ -19,6 +19,7 @@ object ResultDataMapper : Mapper<ResultResponseData, ResultEntity> {
             return RepoEntity(
                     origin.id,
                     origin.name,
+<<<<<<< HEAD
                     origin.fullName,
                     origin.private,
                     origin.html_url,
@@ -26,6 +27,9 @@ object ResultDataMapper : Mapper<ResultResponseData, ResultEntity> {
                     origin.size,
                     origin.language,
                     origin.score
+=======
+                    origin.fullName
+>>>>>>> 02ef840fac80d3f96d19ea03c8f6ccc28aed5fb6
             )
         }
 

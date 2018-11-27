@@ -12,7 +12,7 @@ class RepoRestDataSource
 
     override fun allRepos(query: String): Observable<ResultEntity> {
         return parseResult(reposService.searchRepos(query))
-                .map ( ResultDataMapper::map)
+                .map (ResultDataMapper::map)
                 .toObservable()
     }
 }

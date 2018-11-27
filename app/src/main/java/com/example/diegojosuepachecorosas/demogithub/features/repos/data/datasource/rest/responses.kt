@@ -15,11 +15,17 @@ data class RepoResponseData(
         @SerializedName("name")
         val name: String,
         @SerializedName("full_name")
+<<<<<<< HEAD
         val fullName: String,
         @SerializedName("private")
         val private: Boolean?,
         @SerializedName("html_url")
         val html_url : String?,
+=======
+        val fullName: String
+    /*    @SerializedName("private")
+        val _private: Boolean,
+>>>>>>> 02ef840fac80d3f96d19ea03c8f6ccc28aed5fb6
         @SerializedName("description")
         val description: String?,
         @SerializedName("size")
@@ -27,5 +33,9 @@ data class RepoResponseData(
         @SerializedName("language")
         val language: String?,
         @SerializedName("score")
+<<<<<<< HEAD
         val score: Double?
+=======
+        val score: Double*/
+>>>>>>> 02ef840fac80d3f96d19ea03c8f6ccc28aed5fb6
 )
