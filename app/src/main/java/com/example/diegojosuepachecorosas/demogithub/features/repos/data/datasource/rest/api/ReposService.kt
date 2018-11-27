@@ -8,6 +8,9 @@ import retrofit2.http.Query
 
 interface ReposService {
 
+    //Single : Esperamos un valor como respuesta
     @GET("search/repositories")
     fun searchRepos(@Query("q") term: String): Single<Response<ResultResponseData>>
+
+
 }

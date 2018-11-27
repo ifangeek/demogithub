@@ -22,6 +22,8 @@ class RepoActivity : BaseActivity() {
         fun newInstance(context: Context) = Intent(context, RepoActivity::class.java)
     }
 
+
+    //Lazy : Permite que no se ejecute el codigo hasta que se llame por primera vez a viewmodel
     private val viewModel by lazy {
         getViewModel() as RepoViewModel
     }
@@ -53,18 +55,20 @@ class RepoActivity : BaseActivity() {
                     ReposViewState.Loading -> {
                         progressBar.visibility = View.VISIBLE
                         tvMessage.visibility = View.GONE
+                        adapter.data = emptyList()
                     }
                     is ReposViewState.Error -> {
                         progressBar.visibility = View.GONE
                         tvMessage.text = reason
                         tvMessage.setTextColor(Color.RED)
                         tvMessage.visibility = View.VISIBLE
+                        rvSearch.adapter = null
                     }
                     is ReposViewState.Success -> {
                         progressBar.visibility = View.GONE
                         tvMessage.visibility = View.GONE
-                        tvCountRepos.text = totalcount.toString()
-                        adapter.addRepos(repos)
+                        tvCountRepos.text ="Número de resultado = "+ totalcount.toString()
+                        adapter.data = repos
 
 
                     }
@@ -72,6 +76,7 @@ class RepoActivity : BaseActivity() {
                         progressBar.visibility = View.GONE
                         tvMessage.visibility = View.VISIBLE
                         tvMessage.text = getString(R.string.reposearch_state_emptyrepos)
+                        rvSearch.adapter = null
                         tvMessage.setTextColor(Color.BLACK)
                     }
                 }

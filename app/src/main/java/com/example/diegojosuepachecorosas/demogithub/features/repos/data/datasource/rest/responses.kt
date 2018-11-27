@@ -17,21 +17,15 @@ data class RepoResponseData(
         @SerializedName("full_name")
         val fullName: String,
         @SerializedName("private")
-        val _private: Boolean,
+        val private: Boolean?,
+        @SerializedName("html_url")
+        val html_url : String?,
         @SerializedName("description")
-        val description: String,
-        @SerializedName("updated_at")
-        val updatedAt: String,
+        val description: String?,
         @SerializedName("size")
-        val size: Int,
-        @SerializedName("stargazers_count")
-        val stargazersCount: Int,
+        val size: Int?,
         @SerializedName("language")
-        val language: String,
-        @SerializedName("has_wiki")
-        val hasWiki: Boolean,
-        @SerializedName("archived")
-        val archived: Boolean,
+        val language: String?,
         @SerializedName("score")
-        val score: Double
+        val score: Double?
 )

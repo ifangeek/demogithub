@@ -10,7 +10,9 @@ import kotlinx.android.synthetic.main.item_repo.view.*
 
 class RVReposAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    var data : MutableList<ReposVM> = mutableListOf()
+
+    //field = data
+    var data : List<ReposVM> = emptyList()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -26,11 +28,11 @@ class RVReposAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return data.size
     }
 
-    fun addRepos(reposVM: List<ReposVM>){
+    /*fun addRepos(reposVM: List<ReposVM>){
         data.addAll(reposVM)
         notifyDataSetChanged()
 
-    }
+    }*/
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         holder as ViewHolder
         holder.bindView(data[position])
@@ -40,6 +42,7 @@ class RVReposAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindView(model: ReposVM) {
             itemView.tvRepoName.text = model.fullName
+            itemView.tvLanguage.text = model.language.toString()
         }
     }
 }

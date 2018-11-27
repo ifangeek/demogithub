@@ -11,6 +11,7 @@ import javax.inject.Singleton
 @Module(includes = [ApiModule::class, ViewModuleModule::class])
 class ApplicationModule {
 
+    //SINGLETON : DI solo instancia una vez providesScheduler
     @Singleton
     @Provides
     fun providesScheduler(provider: SchedulerProvider): BaseSchedulerProvider {

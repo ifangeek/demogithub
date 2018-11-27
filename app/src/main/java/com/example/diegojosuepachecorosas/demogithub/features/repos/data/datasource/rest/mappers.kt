@@ -20,14 +20,11 @@ object ResultDataMapper : Mapper<ResultResponseData, ResultEntity> {
                     origin.id,
                     origin.name,
                     origin.fullName,
-                    origin._private,
+                    origin.private,
+                    origin.html_url,
                     origin.description,
-                    origin.updatedAt,
                     origin.size,
-                    origin.stargazersCount,
                     origin.language,
-                    origin.hasWiki,
-                    origin.archived,
                     origin.score
             )
         }

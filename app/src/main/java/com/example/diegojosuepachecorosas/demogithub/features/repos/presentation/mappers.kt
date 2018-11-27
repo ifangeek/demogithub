@@ -24,14 +24,11 @@ object RepoVMMapper : Mapper<RepoEntity, ReposVM> {
                 origin.id,
                 origin.name,
                 origin.fullName,
-                origin._private,
+                origin.private,
+                origin.html_url,
                 origin.description,
-                origin.updateAt,
                 origin.size,
-                origin.stargazersCount,
                 origin.language,
-                origin.hasWiki,
-                origin.archived,
                 origin.score
         )
     }

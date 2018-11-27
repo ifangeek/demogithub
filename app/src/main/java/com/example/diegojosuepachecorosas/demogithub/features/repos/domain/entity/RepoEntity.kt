@@ -4,13 +4,10 @@ data class RepoEntity(
         val id: Int,
         val name: String,
         val fullName: String,
-        val _private: Boolean,
-        val description: String,
-        val updateAt: String,
-        val size: Int,
-        val stargazersCount: Int,
-        val language: String,
-        val hasWiki: Boolean,
-        val archived: Boolean,
-        val score: Double
+        val private: Boolean?,
+        val html_url: String?,
+        val description: String?,
+        val size: Int?,
+        val language: String?,
+        val score: Double?
 )
